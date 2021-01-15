@@ -28,6 +28,13 @@ namespace WcfServicio
         string GetData(int value);
 
         [OperationContract]
+        Producto GetIdProducto();
+
+        [OperationContract]
+        Producto GetProducto(Producto producto);
+
+
+        [OperationContract]
         Peliculas GetDatosPeliculas(Peliculas pelicula);
         [OperationContract]
         Alumnos GetDatosAlumnos(Alumnos alumno);
@@ -75,11 +82,40 @@ namespace WcfServicio
         }
     }
     [DataContract]
+    public class Producto
+    {
+        string nombre;
+        int id;
+        int precio;
+
+
+        [DataMember]
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        [DataMember]
+        public int Precio
+        {
+            get { return precio; }
+            set { precio = value; }
+        }
+
+    }
+
+    [DataContract]
     public class Alumnos
     {
         string nombre;
-        string carrera;
-        float nocontrol;
+        string nocontrol;
+        float semestre;
         int promedio;
 
         [DataMember]
@@ -89,16 +125,16 @@ namespace WcfServicio
             set { nombre = value; }
         }
         [DataMember]
-        public string Carrera
-        {
-            get { return carrera; }
-            set { carrera = value; }
-        }
-        [DataMember]
-        public float Nocontrol
+        public string Nocontrol
         {
             get { return nocontrol; }
             set { nocontrol = value; }
+        }
+        [DataMember]
+        public float Semestre
+        {
+            get { return semestre; }
+            set { semestre = value; }
         }
         [DataMember]
         public int Promedio

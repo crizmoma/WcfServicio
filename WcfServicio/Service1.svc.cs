@@ -41,8 +41,8 @@ namespace WcfServicio
             Alumnos alumno = new Alumnos
             {
                 Nombre = "Cristal Montelongo",
-                Carrera = "informática",
-                Nocontrol = 17030096,
+                Nocontrol = "17030096",
+                Semestre = 7,
                 Promedio = 89
             };
             return alumno;
@@ -61,7 +61,7 @@ namespace WcfServicio
         {
             return alumno;
         }
-        public Libros  GetDatosLibros(Libros libro)
+        public Libros GetDatosLibros(Libros libro)
         {
             return libro;
         }
@@ -81,6 +81,24 @@ namespace WcfServicio
         Alumnos IService1.CrearLibros()
         {
             throw new NotImplementedException();
+        }
+        public Producto GetProducto(Producto producto)
+        {
+
+            return producto;
+
+        }
+
+        public Producto GetIdProducto()
+        {
+            Producto producto = new Producto
+            {
+                Nombre = "pastel",
+                Id = 4676,
+                Precio = 250
+            };
+            return producto;
+
         }
     }
 }
